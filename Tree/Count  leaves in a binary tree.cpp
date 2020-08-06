@@ -34,7 +34,7 @@ int countLeaves(Node* root)
 }
 
 
-*/
+/*
 
 Method 2:- (using recursion)
 
