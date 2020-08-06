@@ -7,6 +7,11 @@ Concept:- 1.)We will using the rolling hash function technique
 
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+#define prime 3
+
 ll createHash(string str,int n)
 {
 	ll res = 0;
