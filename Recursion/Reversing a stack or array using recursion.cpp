@@ -24,3 +24,22 @@ void insert(vector<int> &A,int ele)
     
     return;
 }
+
+void reversing(vector<int> &A)
+{
+    //Base condition....
+    if(A.size() == 0)
+    {
+        return;
+    }
+    
+    int temp1 = A[A.size()-1];
+    
+    A.pop_back();
+    
+    reversing(A);
+    
+    insert(A,temp1);
+    
+    return;
+}
