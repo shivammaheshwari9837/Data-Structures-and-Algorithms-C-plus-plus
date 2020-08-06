@@ -68,3 +68,9 @@ void work()
 	cout<<res;
 	
 }
+
+/*
+
+	same concept used in Painter's partition problem(GFG)
+	
+*/
