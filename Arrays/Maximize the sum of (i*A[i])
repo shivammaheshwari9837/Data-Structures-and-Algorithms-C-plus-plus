@@ -1,0 +1,27 @@
+/*
+
+Ques :-Given an array(0-based indexing), you have to find the max sum of i*A[i] where A[i] is the element at index i in the array. 
+The only operation allowed is to rotate(clock-wise or counter clock-wise) the array any number of times.
+
+*/
+
+int max_sum(int A[],int N)
+{
+    int ans=0,temp_sum=0,curr=0;
+    for(int i=0;i<N;++i)
+    {
+        temp_sum+=A[i];
+        curr+=i*A[i];
+    }
+    
+    ans=curr;
+    
+    for(int i=0;i<N;++i)
+    {
+        int x=temp_sum-A[i];
+        curr=curr-x+A[i]*(N-1);
+        ans=max(curr,ans);
+    }
+    
+    return ans;
+}
