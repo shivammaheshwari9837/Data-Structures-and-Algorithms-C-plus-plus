@@ -45,3 +45,12 @@ void sorting(vector<int> &v1)
 	return;
 	
 }
+
+/*
+
+Ques :- Sorting a stack using recursion....
+
+Concept:- 1. Just similar to previous
+	2. Just implement using stack instead of vector 
+
+*/
