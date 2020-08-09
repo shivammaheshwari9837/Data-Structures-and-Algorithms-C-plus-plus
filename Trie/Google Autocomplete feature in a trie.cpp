@@ -16,7 +16,7 @@ using namespace std;
 struct Trie
 {
 	Trie* child[26];
-	int no_prefix ;
+	int wordEnd ;
 	
 	Trie()
 	{
@@ -24,7 +24,7 @@ struct Trie
 		{
 			child[i] = NULL;
 		}
-		no_prefix = 0;
+		wordEnd = 0;
 	}
 };
 
@@ -40,24 +40,52 @@ void insert(string tar,Trie *root)
 			curr->child[index] = new Trie();
 		}
 		curr = curr->child[index];
-		++(curr->no_prefix);
-		cout<<curr->no_prefix<<" ";
 	}
+	
+	++(curr->wordEnd);
 	
 }
 
-int prefixCount(string str,Trie *root)
+void printWords(Trie *root,string temp)
+{
+	
+	if(root->wordEnd > 0)
+	{
+		for(int i=0;i<(root->wordEnd);++i)
+		cout<<temp<<" ";
+	}
+	
+	for(int i=0;i<26;++i)
+	{
+		if(root->child[i] != NULL)
+		{
+			temp.push_back(i + 97);
+			printWords(root->child[i],temp);
+		}
+	}
+	
+	
+}
+
+void autoComplete(Trie *root,string tar)
 {
 	Trie *curr = root;
 	
-	for(int i=0;i<str.size();++i)
+	for(int i=0;i<tar.size();++i)
 	{
-		int index = str[i] - 'a';
+		int index = tar[i] - 'a';
+		
+		if(curr->child[index] == NULL)
+		{
+			cout<<"Wrong Query \n";
+			return;
+		}
 		curr = curr->child[index];
 	}
 	
-	return (curr->no_prefix);
+	printWords(curr,tar);
 }
+
 
 void work()
 {
@@ -76,15 +104,15 @@ void work()
     	insert(v1[i],root);
 	}
 	
-	int number;
-	cin>>number;
+	int query;
+	cin>>query;
 	
-	for(int i=0;i<number;++i)
+	for(int i=0;i<query;++i)
 	{
 		string s;
 		cin>>s;
-		int ans = prefixCount(s,root);
-		cout<<ans<<"\n";
+		
+		autoComplete(root,s);
 	}
 }
 
