@@ -121,3 +121,9 @@ int main()
 	}
 	return 0;
 }
+
+/*
+	
+Method 2:- Grambell Method 
+
+*/
