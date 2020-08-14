@@ -58,3 +58,61 @@ bool isCyclic(int V, vector<int> adj[])
     return false;
     
 }
+
+/*
+
+Method 2:- Using the topological sort
+
+Concept:- 1.)Just check that while building the topological array(ie. answer array), is its size equal to no. of vertices or not
+
+*/
+
+
+bool topSort(vector<int> adj[],int V,int inDegree[])
+{
+    queue<int> q1;
+    
+    for(int i=0;i<V;++i)
+    {
+        if(inDegree[i] == 0)
+        q1.push(i);
+    }
+    
+    vector<int> ans;
+    
+    while(!q1.empty())
+    {
+        int vertex = q1.front();
+        q1.pop();
+        ans.push_back(vertex);
+        
+        for(int i=0;i<adj[vertex].size();++i)
+        {
+            int child = adj[vertex][i];
+            --inDegree[child];
+            
+            if(inDegree[child] == 0)
+            q1.push(child);
+        }
+    }
+    
+    return (ans.size() != V);
+}
+
+bool isCyclic(int V, vector<int> adj[])
+{
+    // Your code here
+    int inDegree[V] = {0};
+    
+    for(int i=0;i<V;++i)
+    {
+        for(int j=0;j<adj[i].size();++j)
+        {
+            ++inDegree[adj[i][j]];
+        }
+    }
+    
+    return topSort(adj,V,inDegree);
+}
+
+*/
