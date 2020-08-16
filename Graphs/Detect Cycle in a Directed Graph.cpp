@@ -114,5 +114,3 @@ bool isCyclic(int V, vector<int> adj[])
     
     return topSort(adj,V,inDegree);
 }
-
-*/
