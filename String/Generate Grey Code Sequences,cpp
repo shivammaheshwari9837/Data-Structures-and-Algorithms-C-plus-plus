@@ -1,0 +1,42 @@
+/*
+
+Ques :- Given a number N, your task is to complete the function which generates all n-bit grey code sequences, a grey code sequence is a sequence such that 
+successive patterns in it differ by one bit.
+
+Concept:- 1)Make an array of string as = {"0", "1" }
+          2)For generating the next grey code:- a)Take previous grey code array, append  "0" at every string in beginning
+                                                b)Do revrese the whole previous array of string, and append the "1" at beginning of every string
+                                                
+Time - O(n * 2^n)
+Space - O(1)
+
+*/
+
+vector <string> generateCode(int n)
+{
+     //Your code here
+     vector<string> state,temp;
+     state.push_back("0");
+     state.push_back("1");
+     
+     for(int i=1;i<n;++i)
+     {
+         temp = state;
+         state.clear();
+         
+         //Adding '0'...
+         for(int j=0;j<temp.size();++j)
+         {
+             state.push_back("0" + temp[j]);
+         }
+         
+         //Adding '1' to reversed array...
+         for(int j=temp.size()-1;j>=0;--j)
+         {
+             state.push_back("1" + temp[j]);
+         }
+         
+     }
+     
+     return state;
+}
