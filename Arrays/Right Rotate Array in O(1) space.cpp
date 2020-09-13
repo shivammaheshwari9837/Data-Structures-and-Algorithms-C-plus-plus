@@ -6,7 +6,7 @@ Concept:- 1)Here we will observe that there forms a cycle of some sets that is b
           2)In each cycle,we just start to interchange the required values.
           3)the number of sets/cycles will be gcd(n,d)
           
-Time Complexity = O(n * gcd(n,d) ie. O(n^2)
+Time Complexity = O(n * gcd(n,d)) ie. O(n)
 
 */
 
@@ -37,7 +37,7 @@ void work()
 			temp2 = arr1[k];  //swapping the values
 			arr1[k] = temp1;  //swapping the values
 			temp1 = temp2;  //swapping the values
-			j = k;          making j ready for next index
+			j = k;         // making j ready for next index
 			
 			if(k == i) //to avoid the infinite loop or retracing some index again
 			break;
