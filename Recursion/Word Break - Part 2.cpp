@@ -9,6 +9,7 @@ Concept:- 1) First try to see this question ie. Word Break 1(gfg or Leetcode)
           
           2)than we only have to print all valid possibilty in acending sorted order
           
+Time - O(2^n  * current segment length)
         
 */
 
