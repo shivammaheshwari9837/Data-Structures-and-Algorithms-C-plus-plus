@@ -1,6 +1,6 @@
 /*
 
-Ques :- LRU Cache Problem
+Ques :- Page Faults in LRU 
 
 Concept:- Few points to remember--
 	1. if memory is left and element does not found, just add it int the memory
