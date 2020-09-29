@@ -69,3 +69,37 @@ Space - O(n)
         return ans;
     }
 
+/*
+
+Concept:- 1)Basically we are checking the balancing of the brackets while iterating the string. 
+          2)If we get a sum<0, we know that there is an imbalance and place a @.
+          3)Now, it's important to iterate from both sides of the string to check the imbalance.
+          
+Time - O(n)
+
+*/
+
+string minRemoveToMakeValid(string s) {
+        for(int i = 0, sum = 0; i < s.length(); i++) { //from front side
+            
+            if(s[i] == '(') sum++;
+            else if(s[i] == ')' && --sum < 0) { //if sum < 0,make it invalid
+                s[i] = '@';
+                sum = 0;
+            }
+
+        }
+
+        for(int i = s.length() -1, sum = 0; i >= 0; i--) { //from back side
+            
+            if(s[i] == ')') sum++;
+            else if(s[i] == '(' && --sum < 0) {
+                s[i] = '@';
+                sum = 0;
+            }
+
+        }
+
+        s.erase(remove(s.begin(), s.end(), '@'), s.end());
+        return s;
+    }
