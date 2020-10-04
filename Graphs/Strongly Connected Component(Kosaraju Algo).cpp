@@ -84,3 +84,10 @@ int kosaraju(int V, vector<int> adj[])
     
     return coun;
 }
+
+/*
+
+Ques 2:- Check whether a graph is strongly Connected or not 
+Concept:- 1)If the above algorithm returns 1, than true else false
+
+*/
