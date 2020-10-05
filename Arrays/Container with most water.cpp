@@ -7,7 +7,8 @@ Find two lines, which together with x-axis forms a container, such that the cont
 Concept:- 1)Uses two pointers approach
           2)if array[left]<array[right],than try to maximize the left value,so as we know area = (right-left)*(minimum(array[left],array[right] ); same with right pointer
 
-Time - O(n) 
+Time - O(n)
+Space - O(1)
 
 */
 
