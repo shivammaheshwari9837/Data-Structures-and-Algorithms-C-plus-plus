@@ -6,7 +6,9 @@ Theory:- We will use dp for this.
 we have two choice:
 		1. Selects on current ith element.
 		2. Add current element to previous continous element.
-    
+		
+Time - O(n)
+Space - O(1)
  */
  
  void work()
