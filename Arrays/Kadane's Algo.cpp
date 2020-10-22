@@ -6,7 +6,7 @@ Concept:- 1)Since we needed the subarray,we break aur chain if we found somethin
           2)Thus uses similar to DP approach
           
 Time - O(n)
-Space - O(n)
+Space - O(1)
 
 */
 
