@@ -9,6 +9,7 @@ Concept:- 1)Here we have two possible answers--> a)answer can be from linear arr
           4)Special case, when all elements are -ve(ie. -1,-2,-3), than answer will be always X as Y can leads to wrong answer
           
 Time - O(n)
+Space - O(1)
 
 */
 
