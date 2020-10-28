@@ -51,7 +51,7 @@ void work()
 	int curr = 0;
 	int tVal = poi[curr].x;
 	
-	for(int i=0;i<n;++i)
+	for(int i=0;i<n;++i) //findng the left most point from the given points in from of left-sided x-axis
 	{
 		if(poi[i].x < tVal)
 		{
