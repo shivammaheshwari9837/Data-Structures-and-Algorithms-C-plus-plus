@@ -2,7 +2,10 @@
 
 Ques :-Pascal Triangle
 
-Theory:- Uses stack DS
+Theory:- 1)Uses stack to store the previous state
+
+Time - O(n)
+Space - O(1)
 
 */
 
@@ -46,3 +49,28 @@ void  work()
         }
     }
 }
+
+/*
+
+Concept:- 1)Like in pascal triangle:- in some ith row they are exist iC0,iC1,iC2,....iCi
+
+Time - O(n^2)
+Space - O(1)
+
+*/
+
+void printPascal(int n) 
+{ 
+      
+for (int line = 1; line <= n; line++) 
+{ 
+    int C = 1; // used to represent C(line, i) 
+    for (int i = 1; i <= line; i++)  
+    { 
+          
+        // The first value in a line is always 1 
+        cout<< C<<" ";  
+        C = C * (line - i) / i;  
+    } 
+    cout<<"\n";
+} 
