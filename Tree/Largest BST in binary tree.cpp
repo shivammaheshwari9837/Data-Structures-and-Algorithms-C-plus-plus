@@ -6,7 +6,7 @@ Concept:-1.)We will do preorder traversal(left,right,root) first ie. approach is
          2.)for every node, we will kept information{isValid(left/right) subtree,max size of (left/right)subtree, minimum value, maximum value), to check the validity of 
          the current node
          
-Time - O(n) ,space - O(height
+Time - O(n) ,space - O(height)
 
 
 */
