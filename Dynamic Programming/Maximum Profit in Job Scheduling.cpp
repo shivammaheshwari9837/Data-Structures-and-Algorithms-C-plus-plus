@@ -1,27 +1,27 @@
-Ques Link :-       https://leetcode.com/problems/maximum-profit-in-job-scheduling/  
+// Ques Link :-       https://leetcode.com/problems/maximum-profit-in-job-scheduling/  
 
-Logic :- 
+// Logic :- 
 
-1) First sort jobs according to finish time.
-2) Now apply following recursive process. 
-   // Here arr[] is array of n jobs
-   findMaximumProfit(arr[], n)
-   {
-     a) if (n == 1) return arr[0];
-     b) Return the maximum of following two profits.
-         (i) Maximum profit by excluding current job, i.e., 
-             findMaximumProfit(arr, n-1)
-         (ii) Maximum profit by including the current job            
-   }
+// 1) First sort jobs according to finish time.
+// 2) Now apply following recursive process. 
+//    // Here arr[] is array of n jobs
+//    findMaximumProfit(arr[], n)
+//    {
+//      a) if (n == 1) return arr[0];
+//      b) Return the maximum of following two profits.
+//          (i) Maximum profit by excluding current job, i.e., 
+//              findMaximumProfit(arr, n-1)
+//          (ii) Maximum profit by including the current job            
+//    }
 
-How to find the profit including current job?
-The idea is to find the latest job before the current job (in 
-sorted array) that doesn't conflict with current job 'arr[n-1]'. 
-Once we find such a job, we recur for all jobs till that job and
-add profit of current job to result.
+// How to find the profit including current job?
+// The idea is to find the latest job before the current job (in 
+// sorted array) that doesn't conflict with current job 'arr[n-1]'. 
+// Once we find such a job, we recur for all jobs till that job and
+// add profit of current job to result.
 
 
-Code:-  
+// Code:-  
 
 
 class Solution {
